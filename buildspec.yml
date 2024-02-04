@@ -2,11 +2,11 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 18  
-    commands: 
+      nodejs: 18
+    commands:
       - echo "Installing dependencies.."
       - npm install
-      - npm install -g @angular/cli@17.1.2
+      - npm install -g @angular/cli
   build:
     commands:
       - echo "Building Angular project.."
@@ -15,3 +15,4 @@ phases:
     commands:
       - echo "Updating files in the S3 bucket..."
       - aws s3 sync dist/easymensa/ s3://easymensa --delete
+      - aws s3 cp dist/easymensa/browser/index.html s3://easymensa/index.html
