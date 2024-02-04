@@ -14,5 +14,4 @@ phases:
   post_build:
     commands:
       - echo "Updating files in the S3 bucket..."
-      - aws s3 sync dist/easymensa/ s3://easymensa --delete
-      - aws s3 cp dist/easymensa/browser/index.html s3://easymensa/index.html
+      - aws s3 sync dist/easymensa/browser s3://easymensa --delete
