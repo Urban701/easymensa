@@ -1,5 +1,4 @@
-import { Component } from '@angular/core'
-import { RouterOutlet } from '@angular/router'
+import { Component, HostListener } from '@angular/core'
 import { WelcomeComponent } from '../../welcome/welcome.component'
 import {MatInputModule} from "@angular/material/input";
 import {MatSelectModule} from "@angular/material/select"
@@ -22,11 +21,13 @@ import {MatRadioModule} from "@angular/material/radio"
 import {MatCheckboxModule} from "@angular/material/checkbox"
 import {MatDialogModule} from "@angular/material/dialog"
 import { SignUpComponent } from '../sign-up/sign-up.component';
+import {  RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-menubar',
   standalone: true,
-  imports: [RouterOutlet,
+  imports: [
+    RouterModule,
     WelcomeComponent,
     MatInputModule,
     MatSelectModule,
@@ -58,8 +59,18 @@ import { SignUpComponent } from '../sign-up/sign-up.component';
 
 export class MenubarComponent {
   badgevisible = false;
+  menuOpened = true;
+
+  
+
+  @HostListener('window:resize')
+  onResize() {
+    window.innerWidth < 600 ? this.menuOpened = false :  this.menuOpened = true;
+  }
+
   badgevisibility() {
     this.badgevisible = true;
+    console.log("alper" + this.badgevisibility)
   }
 
 }

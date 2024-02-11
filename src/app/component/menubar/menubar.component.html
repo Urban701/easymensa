@@ -4,13 +4,13 @@
     </button>
     <span>EasyMensa</span>
     <span class="example-spacer"></span>
-    <button mat-button routerLink= "sign-up">Registrieren</button>
+    <button mat-button routerLink= "/sign-up">Registrieren</button>
 </mat-toolbar>
 <mat-drawer-container autosize>
-    <mat-drawer #drawer opened="true" mode="side" position="start">
+    <mat-drawer #drawer opened={{menuOpened}} mode="side" position="start">
     <mat-nav-list>
         <mat-list-item>
-            <button routerLink="pekmez" mat-button><mat-icon>info</mat-icon> Willkommen</button>
+            <button routerLink="" mat-button><mat-icon>info</mat-icon> Willkommen</button>
         </mat-list-item>
     </mat-nav-list>
     </mat-drawer>
