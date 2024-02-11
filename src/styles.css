@@ -3,4 +3,19 @@
 h3 {
     color: indianred !important;
 }
+
+p {
+    text-align: justify;
+    text-justify: auto;
+}
+
+.btn {
+    background-color: #009d00 !important;
+    border: #009d00 !important;
+}
+
+.footer {
+    background-color: #009d00;
+}
+
   
