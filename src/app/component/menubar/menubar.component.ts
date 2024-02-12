@@ -65,7 +65,7 @@ export class MenubarComponent {
 
   @HostListener('window:resize')
   onResize() {
-    window.innerWidth < 600 ? this.menuOpened = false :  this.menuOpened = true;
+    window.innerWidth < 800 ? this.menuOpened = false :  this.menuOpened = true;
   }
 
   badgevisibility() {
