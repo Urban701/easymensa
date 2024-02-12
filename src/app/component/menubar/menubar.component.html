@@ -1,20 +1,22 @@
-<mat-toolbar color="primary" class="mat-elevation-z8">
+<mat-toolbar color="primary"  class="spacer">
     <button (click)="drawer.toggle()" mat-icon-button>
         <mat-icon>menu</mat-icon>
     </button>
-    <span>EasyMensa</span>
-    <span class="example-spacer"></span>
-    <button mat-button routerLink= "/sign-up">Registrieren</button>
+    <img src="assets/img/easymensa-logo.png" alt="Firmenlogo" class="logo">
+
 </mat-toolbar>
 <mat-drawer-container autosize>
     <mat-drawer #drawer opened={{menuOpened}} mode="side" position="start">
-    <mat-nav-list>
-        <mat-list-item>
-            <button routerLink="" mat-button><mat-icon>info</mat-icon> Willkommen</button>
-        </mat-list-item>
-    </mat-nav-list>
+        <mat-nav-list>
+            <mat-list-item>
+                <button routerLink="" mat-button><mat-icon>info</mat-icon> Willkommen</button>
+            </mat-list-item>
+            <mat-list-item>
+                <button routerLink="sign-up" mat-button><mat-icon>assignment_ind</mat-icon> Registrieren</button>
+            </mat-list-item>
+        </mat-nav-list>
     </mat-drawer>
     <mat-drawer-content>
-            <router-outlet></router-outlet>
+        <router-outlet></router-outlet>
     </mat-drawer-content>
 </mat-drawer-container>
