@@ -1,5 +1,6 @@
 .spacer {
-  display: flex; justify-content: space-between;
+  display: flex; 
+  justify-content: space-between;
 }
 
 .mat-toolbar.mat-primary{
@@ -9,9 +10,4 @@
 .logo {
   width: 50px;
   margin-right: 10px;  
-  transition: transform 0.7s;
-}
-
-img:hover {
-  transform: rotate(360deg);
 }
