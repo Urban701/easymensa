@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core'
+import { Component, HostListener, OnInit } from '@angular/core'
 import { WelcomeComponent } from '../../welcome/welcome.component'
 import {MatInputModule} from "@angular/material/input";
 import {MatSelectModule} from "@angular/material/select"
@@ -57,20 +57,27 @@ import {  RouterModule } from '@angular/router';
 })
 
 
-export class MenubarComponent {
+export class MenubarComponent implements OnInit{
+
   badgevisible = false;
   menuOpened = true;
+  menuOpenedSize : number = 800;
 
-  
+    
+  ngOnInit(): void {
+    this.isMenuOpened();
+  }
 
   @HostListener('window:resize')
   onResize() {
-    window.innerWidth < 800 ? this.menuOpened = false :  this.menuOpened = true;
+    this.isMenuOpened();
   }
 
   badgevisibility() {
     this.badgevisible = true;
-    console.log("alper" + this.badgevisibility)
   }
 
+  isMenuOpened() {
+    window.innerWidth < this.menuOpenedSize ? this.menuOpened = false :  this.menuOpened = true;
+  }
 }
