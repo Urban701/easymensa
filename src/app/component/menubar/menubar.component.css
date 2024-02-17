@@ -11,3 +11,7 @@
   width: 50px;
   margin-right: 10px;  
 }
+
+mat-drawer-content {
+  height: 100vh;
+}

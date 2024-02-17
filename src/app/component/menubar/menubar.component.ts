@@ -61,7 +61,7 @@ export class MenubarComponent implements OnInit{
 
   badgevisible = false;
   menuOpened = true;
-  menuOpenedSize : number = 800;
+  menuOpenedSize : number = 500;
 
     
   ngOnInit(): void {
