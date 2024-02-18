@@ -9,7 +9,6 @@ export class Food {
      type: DietType; 
      allergens: Allergens [];
 
-
      constructor(
         imgSource: string,
         name: string,
