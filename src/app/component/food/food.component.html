@@ -1,2 +1,21 @@
-<p>hier ist ein essen item</p>
-<p>Beschreinung, Bild, Preis, vegetarisch ?</p>
+<div class="container">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let food of foodList">
+        <div class="card mb-3">
+          <img [src]="food.imgSource" class="card-img-top" alt="{{ food.name }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ food.name }}</h5>
+            <p class="card-text">{{ food.description }}</p>
+            <p class="card-text"><small class="text-muted">Type: {{ food.type }}</small></p>
+            <p class="card-text">Allergens:</p>
+            <ul class="list-unstyled">
+              <li *ngFor="let allergen of food.allergens">
+                {{ allergen.name }} - {{ allergen.description }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

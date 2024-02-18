@@ -1,7 +1,13 @@
-<div class="container">
+<!-- <div class="container">
     <p>menuplan works!</p>
     <h3>Irgend ein Daatum</h3>
     <app-food></app-food>
+</div> -->
+<div class="container mt-5" *ngFor="let menuPlan of menuPlanList">
+    <h3>{{ menuPlan.date | date }}</h3>
+    
+    <app-food [foodList]="menuPlan.foods"></app-food>
 </div>
+  
 
 
