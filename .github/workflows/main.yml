@@ -32,4 +32,4 @@ jobs:
       run: ng build --configuration=production
 
     - name: Deploy to S3
-      run: aws s3 sync dist/easymensa/browser s3://${AWS_S3_BUCKET} --delete
+      run: aws s3 sync dist/easymensa/browser s3://${AWS_S3_BUCKET} --delete --region eu-west-1
