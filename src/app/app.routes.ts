@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { WelcomeComponent } from './welcome/welcome.component';
+import { WelcomeComponent } from './component/welcome/welcome.component';
 import { SignUpComponent } from './component/sign-up/sign-up.component';
 import { MenuplanComponent } from './component/menuplan/menuplan.component';
 

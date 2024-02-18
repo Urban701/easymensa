@@ -1,5 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core'
-import { WelcomeComponent } from '../../welcome/welcome.component'
+import { WelcomeComponent } from '../welcome/welcome.component'
 import {MatInputModule} from "@angular/material/input";
 import {MatSelectModule} from "@angular/material/select"
 import {MatAutocompleteModule} from "@angular/material/autocomplete"
