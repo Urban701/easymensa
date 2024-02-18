@@ -10,8 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      AWS_ACCESS_KEY_ID: AKIAVRUVPYUPOZMQH6P7
-      AWS_SECRET_ACCESS_KEY: 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
+      AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
     steps:
     - name: Checkout Repository
@@ -30,10 +31,5 @@ jobs:
     - name: Build Angular project
       run: ng build --configuration=production
 
-    - name: Check authentication status
-      run: aws sts get-caller-identity
-      if: always()  # Führe diesen Schritt immer aus, unabhängig vom vorherigen Schritt
-
-    - name: Display authentication status
-      run: echo "Authentication successful"
-      if: success()  # Führe diesen Schritt nur aus, wenn der vorherige Schritt erfolgreich war
+    - name: Deploy to S3
+      run: aws s3 sync dist/easymensa/browser s3://${AWS_S3_BUCKET} --delete
