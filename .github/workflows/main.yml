@@ -31,11 +31,6 @@ jobs:
     - name: Build Angular project
       run: ng build --configuration=production
 
-    - name: Deploy to S3
-      run: |
-        aws s3 sync dist/easymensa/browser s3://${AWS_S3_BUCKET} --delete
-      continue-on-error: true
-
     - name: Check authentication status
       run: aws s3 ls s3://${AWS_S3_BUCKET}
       if: always()  # Führe diesen Schritt immer aus, unabhängig vom vorherigen Schritt
