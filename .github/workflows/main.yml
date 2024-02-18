@@ -31,10 +31,10 @@ jobs:
     - name: Build Angular project
       run: ng build --configuration=production
 
-   - name: Schritt 2
+    - name: Schritt 2
       if: github.event_name == 'workflow_dispatch' 
       run: echo "Das ist Schritt 2"
-      
+
     - name: Deploy to S3
       run: aws s3 sync dist/easymensa/browser s3://${AWS_S3_BUCKET} --delete --region eu-west-1
          
