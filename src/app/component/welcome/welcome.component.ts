@@ -5,7 +5,7 @@ import {MatSlideToggleModule } from '@angular/material/slide-toggle'
   selector: 'app-welcome',
   standalone: true,
   imports: [
-    MatSlideToggleModule
+    MatSlideToggleModule,
   ],
   templateUrl: './welcome.component.html',
   styleUrl: './welcome.component.css'
