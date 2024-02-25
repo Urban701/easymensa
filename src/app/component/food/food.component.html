@@ -1,4 +1,20 @@
-<div class="container">
+<div class="card mt-5" *ngFor="let food of foodList">
+  <img [src]="food.imgSource" class="card-img-top" alt="{{ food.name }}">
+  <div class="card-body">
+    <div class="text-section">
+    <h5 class="card-title">{{ food.name }}</h5>
+    <p class="card-text">{{ food.description }}</p>
+  </div>
+  <div class="cat-section">
+    <div>Preis</div>
+    <a href="#" class="btn btn-primary">Bestellen</a>
+  </div>
+</div>
+
+
+
+
+<!-- <div class="container">
     <div class="row">
       <div class="col-md-4" *ngFor="let food of foodList">
         <div class="card mb-3">
@@ -17,5 +33,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   
