@@ -2,15 +2,30 @@ import { Injectable } from '@angular/core';
 import { MenuPlan } from '../model/menuplan';
 import { Food } from '../model/food/food';
 import { Allergens } from '../model/food/allergens';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { ApiService } from './api.service';
+import { ApiEndPointsV1 } from '../api/v1/endpoint';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MenuPlanService {
 
-  constructor() { }
+  data: any;
+
+  constructor(private http: HttpClient, private apiService: ApiService) { }
 
   getExampleMenuPlan(): MenuPlan[] {
+
+    // this.http.get('http://localhost:5000/api/allergens').subscribe((response) => {
+    //   // Die empfangenen Daten werden in der Variablen 'data' gespeichert
+    //   this.data = response;
+    //   console.log(this.data); // Protokolliert die empfangenen Daten
+    // });
+
+    let params = new HttpParams();
+
+    this.apiService.get(`${ApiEndPointsV1.allergens}`, params).subscribe();
 
     let allergens: Allergens[] =  [new Allergens('Nüsse','Nüssalergie','N')]
    
