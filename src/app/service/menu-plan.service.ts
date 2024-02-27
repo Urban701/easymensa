@@ -21,6 +21,7 @@ export class MenuPlanService {
       "meat",
       allergens
     )
+
     let food2 :Food = new Food(
       "assets/img/doner.jpg",
       "Kebab",
@@ -34,7 +35,6 @@ export class MenuPlanService {
     let tommorow = new Date()
     tommorow.setDate(tommorow.getDate() + 1);
     let menuplan2: MenuPlan = new MenuPlan(tommorow, foods)
-      
     return [menuplan, menuplan2];
   }
 }
