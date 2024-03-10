@@ -8,12 +8,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    env:
-      AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
-      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
@@ -29,7 +23,4 @@ jobs:
           npm install -g @angular/cli
 
       - name: Build Angular project
-        run: ng build --configuration=production
-
-      - name: Deploy to S3
-        run: aws s3 sync dist/easymensa/browser s3://${AWS_S3_BUCKET} --delete --region eu-west-1
+        run: ng build
